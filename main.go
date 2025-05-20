@@ -1,4 +1,4 @@
-package auditer-sdk
+package main
 
 import (
 	"github.com/manpreet-kaur-23/auditer-sdk/auditer"
@@ -9,4 +9,3 @@ func InitSDK(db *gorm.DB) {
 
 	db.Use(&auditer.AuditerPlugin{})
 }
-
