@@ -1,14 +1,14 @@
 package auditer
 
 import (
-	"gorm.io/gorm"
 	"github.com/manpreet-kaur-23/auditer-sdk/kafka"
+	"gorm.io/gorm"
 )
 
 func beforeUpdateCallback(db *gorm.DB) {
-	_ = kafka.SendKafkaMessage("auditer-callbacks", "Before update callback called")
+	_ = kafka.SendKafkaMessage("audit_log_test", "Before update callback called")
 }
 
 func afterUpdateCallback(db *gorm.DB) {
-	_ = kafka.SendKafkaMessage("auditer-callbacks", "After update callback called")
+	_ = kafka.SendKafkaMessage("audit_log_test", "After update callback called")
 }
