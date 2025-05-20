@@ -5,6 +5,5 @@ import (
 )
 
 func InitSDK(db *gorm.DB) {
-
 	db.Use(&AuditerPlugin{})
 }
