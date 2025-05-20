@@ -1,6 +1,8 @@
 package kafka
 
 import (
+	"log"
+
 	"github.com/IBM/sarama"
 )
 
@@ -22,5 +24,6 @@ func SendKafkaMessage(topic, msg string) error {
 	}
 
 	_, _, err = producer.SendMessage(message)
+	log.Println("Done")
 	return err
 }
