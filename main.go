@@ -1,4 +1,4 @@
-package audit-sdk
+package auditer-sdk
 
 import (
 	"github.com/manpreet-kaur-23/auditer-sdk/auditer"
