@@ -1,4 +1,4 @@
-package auditer
+package constants
 
 import "time"
 

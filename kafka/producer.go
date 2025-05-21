@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/IBM/sarama"
-	"github.com/manpreet-kaur-23/auditer-sdk/auditer"
+	"github.com/manpreet-kaur-23/auditer-sdk/constants"
 )
 
 // SendKafkaMessage sends a message to the specified Kafka topic.
@@ -30,7 +30,7 @@ func SendKafkaMessage(topic, msg string) error {
 	return err
 }
 
-func SendAuditLogToKafka(topic string, logData auditer.AuditLog) error {
+func SendAuditLogToKafka(topic string, logData constants.AuditLog) error {
 	jsonBytes, err := json.Marshal(logData)
 	if err != nil {
 		log.Printf("Failed to marshal AuditLog: %v", err)
