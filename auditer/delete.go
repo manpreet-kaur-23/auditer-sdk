@@ -6,9 +6,9 @@ import (
 )
 
 func beforeDeleteCallback(db *gorm.DB) {
-	_ = kafka.SendKafkaMessage("audit_log_test", "Before delete callback called")
+	_ = kafka.SendAuditLogToKafka("audit_log_test", GlobalAuditLog)
 }
 
 func afterDeleteCallback(db *gorm.DB) {
-	_ = kafka.SendKafkaMessage("audit_log_test", "After delete callback called")
+	_ = kafka.SendAuditLogToKafka("audit_log_test", GlobalAuditLog)
 }

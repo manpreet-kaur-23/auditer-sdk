@@ -6,9 +6,9 @@ import (
 )
 
 func beforeUpdateCallback(db *gorm.DB) {
-	_ = kafka.SendKafkaMessage("audit_log_test", "Before update callback called")
+	_ = kafka.SendAuditLogToKafka("audit_log_test", GlobalAuditLog)
 }
 
 func afterUpdateCallback(db *gorm.DB) {
-	_ = kafka.SendKafkaMessage("audit_log_test", "After update callback called")
+	_ = kafka.SendAuditLogToKafka("audit_log_test", GlobalAuditLog)
 }
